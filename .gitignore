@@ -1,0 +1,17 @@
+# Laravel files/folders
+/bootstrap/compiled.php
+
+# Composer, Node, Bower, etc
+/vendor
+/node_modules
+/bower_components
+composer.phar
+
+# OS- and Editor-Specific files
+.DS_Store
+Thumbs.db
+/.idea
+
+# Other
+.env.*.php
+.env.php

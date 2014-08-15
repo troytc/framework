@@ -24,11 +24,22 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('homestead'),
-
-));
+$env = $app->detectEnvironment(function()
+{
+	switch (getenv('LARAVEL_ENV')) {
+		case 'production':
+			return 'production';
+			break;
+		case 'staging':
+			return 'staging';
+			break;
+		case 'testing':
+			return 'testing';
+			break;
+		default:
+			return 'local';
+	}
+});
 
 /*
 |--------------------------------------------------------------------------
